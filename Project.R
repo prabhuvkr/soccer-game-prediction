@@ -10,7 +10,9 @@ library(xgboost)
 library(caret)
 library(pROC)
 sqlite_drv <- dbDriver("SQLite")
-sql_db <- dbConnect(sqlite_drv,"C:/Users/prabh/Documents/Assignment/Machine Learning/Project/63_589_bundle_archive/database.sqlite")
+
+#Data from https://www.kaggle.com/hugomathien/soccer
+sql_db <- dbConnect(sqlite_drv,"~/Machine Learning/Project/63_589_bundle_archive/database.sqlite")
 match_df <- dbGetQuery(sql_db,"select * from Match")
 team_df <- dbGetQuery(sql_db,"select * from Team")
 team_attributes <- dbGetQuery(sql_db,"select * from Team_Attributes")
